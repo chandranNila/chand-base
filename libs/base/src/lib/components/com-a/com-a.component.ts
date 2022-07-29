@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'lib-com-a',
@@ -7,7 +8,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ComAComponent implements OnInit {
 
-  constructor() { }
+  constructor(translate: TranslateService) {
+    translate.addLangs(['en', 'fr']);
+    translate.setDefaultLang('en');
+    translate.use('en');
+  }
 
   ngOnInit(): void {
   }

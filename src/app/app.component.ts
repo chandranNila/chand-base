@@ -1,4 +1,5 @@
 import { Component, ElementRef, OnInit, ViewChild, Renderer2 } from '@angular/core';
+import { TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-root',
@@ -13,8 +14,10 @@ export class AppComponent implements OnInit {
   w: number = window.innerWidth;
   h: number = window.innerHeight;
 
-constructor(private renderer: Renderer2){
-
+constructor(private renderer: Renderer2, translate: TranslateService){
+  translate.addLangs(['en', 'fr']);
+  translate.setDefaultLang('en');
+  translate.use('en');
 }
 
 ngOnInit(): void {
